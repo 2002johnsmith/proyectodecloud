@@ -1,0 +1,31 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import './App.css'
+import Home from "./pages/Home.tsx";
+import MainHeader from "./common/MainHeader.tsx";
+import MainNav from "./common/MainNav.tsx";
+import MainFooter from "./common/MainFooter.tsx";
+import Game from "./pages/Game.tsx";
+import Login from './pages/Login.tsx';
+import Game1 from "./pages/Game1.tsx";
+
+function App() {
+    return (
+        <>
+            <BrowserRouter>
+                <MainHeader />
+                <MainNav />
+                <Routes>
+                    <Route path='/' element={<Home/>}/>
+                    <Route path='/game' element={<Game/>}/>
+                    <Route path='/game1' element={<Game1/>}/>
+                    <Route path='/login' element={<Login/>}/>
+                </Routes>
+                <MainFooter />
+            </BrowserRouter>
+
+        </>
+    );
+}
+
+
+export default App
